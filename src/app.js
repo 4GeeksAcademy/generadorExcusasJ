@@ -1,11 +1,26 @@
 /* eslint-disable */
-import "bootstrap";
-import "./style.css";
+var datos = [];
 
-import "./assets/img/rigo-baby.jpg";
-import "./assets/img/4geeks.ico";
+function guardarDatos() {
+  let campeonDatos = document.getElementById("campeon").value;
+  let lineaDatos = document.getElementById("linea").value;
+  let hechizoDatos = document.getElementById("hechizo").value;
 
-window.onload = function() {
-  //write your code here
-  console.log("Hello Rigo from the console!");
-};
+  let nuevoDato = {
+    campeon: campeonDatos,
+    linea: lineaDatos,
+    hechizo: hechizoDatos
+  };
+
+  datos.push(nuevoDato);
+
+  document.getElementById("campeon").value = "";
+  document.getElementById("linea").value = "";
+  document.getElementById("hechizo").value = "";
+
+  mostrar();
+}
+
+function mostrar() {
+  console.log(datos);
+}
